@@ -8,7 +8,8 @@ const TodoList = observer(() => {
             {!todosState.isLoading && <div>Completed: {todosState.completedCount}</div>}
             {
                 todosState.todos.map(todo => (
-                    <div key={todo.id}>
+                    <div key={todo.id} style={{marginTop: 10}}>
+                        <button style={{marginRight: 5}} onClick={() => todosState.removeTodo(todo)}>X</button>
                         <label>
                             <input type="checkbox" checked={todo.completed} onChange={e => todo.completed = e.target.checked}/>
                             {todo.id} {todo.title}

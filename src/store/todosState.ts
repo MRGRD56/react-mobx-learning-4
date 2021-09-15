@@ -20,6 +20,11 @@ class TodosState {
     get completedCount() {
         return this.todos.filter(t => t.completed).length;
     }
+
+    removeTodo(todo: Todo) {
+        const todoIndex = this.todos.indexOf(todo);
+        this.todos.splice(todoIndex, 1);
+    }
 }
 
 const todosState = new TodosState();
